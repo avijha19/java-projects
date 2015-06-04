@@ -35,7 +35,7 @@ public class CollectionTest {
 //		th1.start();
 //		th2.start();
 		
-		//Concurrent modification exceprion
+		//Concurrent modification exception
 /*		Map<String,String> premiumPhone = new HashMap<String,String>();
         premiumPhone.put("Apple", "iPhone");
         premiumPhone.put("HTC", "HTC one");
