@@ -1,5 +1,6 @@
 import java.util.HashMap;
  //https://www.geeksforgeeks.org/lru-cache-implementation/
+//https://www.wiley.com/college/silberschatz6e/0471417432/slides/pdf2/mod10.2.pdf
 public class LRUCache {
     private HashMap<Integer, DoubleLinkedListNode> map 
         = new HashMap<Integer, DoubleLinkedListNode>();
