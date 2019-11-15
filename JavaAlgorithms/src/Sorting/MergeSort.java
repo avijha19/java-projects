@@ -6,62 +6,45 @@ public class MergeSort {
 	
 	public static void main ( String arg[]){
 		System.out.println("Avinash");
-		 Integer[] inArray = {5,4,3,2,1,8,7,6};
+		 int[] inArray = new int[]{5,4,3,2,1,8,7,6};
 		 System.out.println("before sort: " + Arrays.toString(inArray));
-		 System.out.println("after sort: " + Arrays.toString(mergeSort(inArray)));
+		  mergeSort(inArray, 0, inArray.length -1);
+	    System.out.println("after sort: " + Arrays.toString(inArray));
+
 
 	}
 	
-	private static Integer[] mergeSort(Integer[] inArray){
+	public static void mergeSort(int[] Array, int left, int right) {
+		if (right > left) {
+			int m = (left + right) / 2;
+			mergeSort(Array, left, m);
+			mergeSort(Array, m + 1, right);
+			merge(Array, left, m, right);
+		}
+	}//end of method
+
+	
+	static void merge(int[] A, int left, int middle, int right) {
+		int [] leftTmpArray = new int[middle-left+2];  //Create tmp arrays
+		int [] rightTmpArray = new int[right-middle+1];
 		
-		int mid= inArray.length/2;
-		Integer[] left;
-		Integer[] right;
-		if (mid<2){
-			return inArray;
-		} else{
-			left= new Integer[mid];
-			right= new Integer[inArray.length -mid];
-			for (int i=0; i < mid; i++){
-				left[i] = inArray[i];
-			}
-			System.out.println("left: " + Arrays.toString(left));
-			for (int j=mid; j < inArray.length-1; j++){
-				right[j-mid] = inArray[j];
+		for(int i=0;i<=middle-left;i++) //Copy values from Array 'A' to these tmp arrays
+			leftTmpArray[i]= A[left+i];
+		for(int i=0;i<right-middle;i++)
+			rightTmpArray[i]= A[middle+1+i];
+		
+		leftTmpArray[middle-left+1]= Integer.MAX_VALUE; //Merge values and insert into Array 'A'
+		rightTmpArray[right-middle] = Integer.MAX_VALUE;
+		int i = 0, j = 0;
+		for (int k = left; k <= right; k++) {
+			if (leftTmpArray[i] < rightTmpArray[j]) {
+				A[k] = leftTmpArray[i];
+				i++;
+			} else {
+				A[k] = rightTmpArray[j];
+				j++;
 			}
 		}
-		//mergeSort(left);
-		//mergeSort(right);
-		
-		inArray= merge(left,right, inArray);
-		
-		return inArray;		
-	}
-	
-	private static Integer[] merge(Integer[] left, Integer[] right, Integer[] result){
-		
-      int i=0;
-      int j=0;
-      int k=0;
-      while (i<left.length-1 && j < right.length-1 ){
-    	  if (left[i]>right[j]){
-        	  result[k]=right[j];
-        	  j++;
-          }  else{
-        	  result[k]=left[i];
-        	  i++;
-          }
-    	  k++;
-      }
-      while ( i<left.length-1){
-    	  result[k]=left[i]; 
-      }
-      while ( j<right.length-1){
-    	  result[k]=left[j]; 
-      }
-		
-		return result;
-				
-	}
+	}//end of method
 	
 }

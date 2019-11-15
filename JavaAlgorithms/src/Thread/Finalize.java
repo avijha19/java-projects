@@ -25,7 +25,7 @@ public class Finalize
  
       //Assigning a2 to a1
  
-      //a1 = null;
+     // a1 = null;
       a1=a2;
  
       //Now both a1 and a2 will be pointing to same object 

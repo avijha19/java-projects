@@ -1,6 +1,8 @@
 package CarComparable;
 
-public class Car implements Comparable<Car>{
+//public class Car implements Comparable<Car>{
+	public class Car{
+
 
 	private String name;
 	private String color;
@@ -61,15 +63,15 @@ public class Car implements Comparable<Car>{
 
 	}
 
-	@Override
-	public int compareTo(Car o) {
-		return model.compareTo(o.getModel());
+	//@Override
+	//public int compareTo(Car o) {
+		//return model.compareTo(o.getModel());
 //		// TODO Auto-generated method stub
 //		if(o.getModel()>this.getModel()){
 //			return 1;
 //		} else {
 //			return 0;
 //		}
-	}
+	//}
 
 }

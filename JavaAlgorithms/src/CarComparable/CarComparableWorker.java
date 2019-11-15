@@ -16,6 +16,8 @@ public class CarComparableWorker {
 	private static  List<Car> linkedlst = new LinkedList<Car>();
     private static  Set<Car> treeSet = new TreeSet<Car>();
 	private static  Map<Car, String> map1= new TreeMap<Car, String>();
+	//private static  Map<Car, String> map1= new HashMap<Car, String>();
+
 
 	public static void main(String args[]){
 		
@@ -40,8 +42,12 @@ public class CarComparableWorker {
 		putTreeMapMethod(c1,c2,c3,p1,p2,p3);
 		System.out.println("Size: " +map1.size());
 		
+		for (int i=0; i<100; i++) {
+		
 		for(Map.Entry<Car, String> entry: map1.entrySet()){
 			System.out.println("key: " + entry.getKey().getModel());
+		}
+		System.out.println("end");
 		}
 		
 	}

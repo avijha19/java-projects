@@ -11,6 +11,9 @@ public class MostOccur {
 		
 		mostOccur(new int[]{1, 2, 7, 5, 3, 6});
 		
+		int i = 123451234512345;
+		
+		System.out.println("All are same");
 	}
 	
 	

@@ -1,4 +1,4 @@
-package Algorithms;
+package LeetCode;
 import java.util.Arrays;
 
 public class StringRepeatingChar {
@@ -6,7 +6,7 @@ public class StringRepeatingChar {
 	
 	public static void main( String[] args){
 		
-		String str= "Avinaash";
+		String str= "Avinash";
 		char[] charr = str.toCharArray();
 		Arrays.sort(charr);
 		//String str = "";

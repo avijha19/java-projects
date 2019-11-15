@@ -3,6 +3,8 @@ import java.util.Arrays;
 
 public class BubbleSort {
 	
+	//all sorting example: https://stackabuse.com/sorting-algorithms-in-java/
+	
 //  https://www.journaldev.com/557/java-bubble-sort-example
 //	In bubble sort, the array of integers is traversed from index 0 to length-1. 
 //	The value at 0th position is compared with value at 1st position 
@@ -18,7 +20,7 @@ public class BubbleSort {
 		System.out.println("Avinash");
 		 Integer[] inArray = {3,4,5,2,1};
 		 System.out.println("before sort: " + Arrays.toString(inArray));
-		 System.out.println("after sort: " + Arrays.toString(buubleSort(inArray)));
+		 System.out.println("after sort: " + Arrays.toString(buubleSortUdemy(inArray)));
 
 	}
 	
@@ -33,6 +35,27 @@ public class BubbleSort {
 					temp=inArray[j];
 					inArray[j]=inArray[j-1];
 					inArray[j-1]=temp;		
+				}
+			}
+			
+		}
+		
+		return inArray;
+		
+	}
+	
+	
+private static Integer[] buubleSortUdemy(Integer[] inArray){
+		
+		int temp;
+		
+		for(int i=0; i< inArray.length-1; i++){
+			
+			for(int j=0; j<inArray.length-i-1; j++){
+				if(inArray[j+1]<inArray[j]){
+					temp=inArray[j];
+					inArray[j]=inArray[j+1];
+					inArray[j+1]=temp;		
 				}
 			}
 			
