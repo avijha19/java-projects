@@ -1,0 +1,56 @@
+# Instructions to use
+
+#Execution
+1. Unzip file FlagPickerAvinash.zip
+2. execute command:        mvn clean install
+3. execute command:  mvn spring-boot:run
+
+
+ #Test
+
+A. Success Scenario
+
+1. pass country name to get specific country flag
+test from RESTCLIENT 
+http://localhost:8080/api/flagpicker/v1/flags?countryName=Ethiopia
+
+
+2. pass continent name to get flag of all countries in that continent
+test from RESTCLIENT 
+http://localhost:8080/api/flagpicker/v1/flags?continentName=Africa
+
+3. dont pass any thing as query parameter to get all flags
+http://localhost:8080/api/flagpicker/v1/flags
+
+
+B. Failure Scenario
+
+
+1. pass wrong country name to get specific country flag
+test from RESTCLIENT 
+http://localhost:8080/api/flagpicker/v1/flags?countryName=Ethiopiaa
+
+{
+"errorCode": "RECORD_NOT_FOUND",
+"errors": [
+  "There is no record found for given country: Ethiopiaa"
+],
+}
+
+
+2. pass wrong continent name to get flag of all countries in that continent
+test from RESTCLIENT 
+http://localhost:8080/api/flagpicker/v1/flags?continentName=Africaa
+
+
+{
+"errorCode": "RECORD_NOT_FOUND",
+"errors": [
+  "There is no record found for given continent: Africaa"
+],
+}
+
+# Metrics
+
+http://localhost:8080/metrics
+Health metrics http://localhost:8080/health
