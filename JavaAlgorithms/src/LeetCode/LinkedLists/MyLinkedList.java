@@ -31,7 +31,10 @@ package LeetCode.LinkedLists;
 	    ListNode curr = head;
 	    // index steps needed 
 	    // to move from sentinel node to wanted index
-	    for(int i = 0; i < index + 1; ++i) curr = curr.next;
+	    for(int i = 0; i < index + 1; ++i) {
+	    	curr = curr.next;
+
+	    }
 	    return curr.val;
 	  }
 

@@ -2,6 +2,11 @@ package LeetCode.LinkedLists;
 
 //https://leetcode.com/problems/add-two-numbers/
 //Input: (2 -> 4 -> 3) + (5 -> 6 -> 4)
+// 342
+//+ 465
+//------
+//  807
+//7->0->8
 //Output: 7 -> 0 -> 8
 //Explanation: 342 + 465 = 807.
 
@@ -47,12 +52,12 @@ public class AddTwoNumbers {
 //		l21.next = null;
 
 		//leetcode Avinash
-		ListNode ls3 = addTwoNumbers(l11, l21);
-		System.out.println("Sum Node: " + ls3.val);
+//		ListNode ls3 = addTwoNumbers(l11, l21);
+//		System.out.println("Sum Node: " + ls3.val);
 
 //		// LeetCode recursive
-//		ls3 = addTwoNumbers2(l11, l21);
-//		System.out.println("Sum Node 2: " + ls3.val);
+		ListNode ls3 = addTwoNumbers2(l11, l21);
+		System.out.println("Sum Node 2: " + ls3.val);
 //		
 //		//leetCode2 iterative
 //		ls3 = addTwoNumbers3(l11, l21);
@@ -72,11 +77,11 @@ public class AddTwoNumbers {
 		resList = resList.next;
 
 		if (l1.next != null && l2.next != null)
-			addTwoNumbers(l1.next, l2.next);
+			addTwoNumbers2(l1.next, l2.next);
 		else if (l1.next != null)
-			addTwoNumbers(l1.next, new ListNode(0));
+			addTwoNumbers2(l1.next, new ListNode(0));
 		else if (l2.next != null)
-			addTwoNumbers(new ListNode(0), l2.next);
+			addTwoNumbers2(new ListNode(0), l2.next);
 		else if (carry > 0) {
 			resList.next = new ListNode(1);
 			resList = resList.next;
