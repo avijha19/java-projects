@@ -13,6 +13,8 @@ import org.springframework.web.bind.annotation.RestController;
 import com.apple.avinash.beans.Continent;
 import com.apple.avinash.service.FlagPickerService;
 
+import io.swagger.annotations.*;
+
 @RestController
 @RequestMapping("/api/flagpicker/v1")
 public class FlagPickerController {
@@ -23,6 +25,8 @@ public class FlagPickerController {
 	FlagPickerService flagPickerService;
      
     @GetMapping(path="/flags", produces = "application/json")
+    @ApiOperation(value = "Get Flag", response = List.class, httpMethod = "GET")
+    @ApiResponses(value = {@ApiResponse(code = 200, message = "Get Flag", response = List.class)})
     public  List<Continent> getContinents(@RequestParam(required = false) String continentName,
     		@RequestParam(required = false) String countryName) throws Exception 
     {
